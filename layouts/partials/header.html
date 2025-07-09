@@ -4,7 +4,3 @@
 		{{ partial "menu.html" . }}
 	</div>
 </header>
-
-{{ if or .Params.katex .Site.Params.katex }}
-{{ partial "katex.html" . }}
-{{ end }}

@@ -1,15 +1,19 @@
 baseurl = "/"
 title = "Mainroad"
 languageCode = "en-us"
-paginate = "10" # Number of posts per page
+pagination.pagerSize = "10" # Number of posts per page
 theme = "mainroad"
-disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+disqusShortname = "" # DEPRECATED! Use .Services.Disqus.Shortname
+googleAnalytics = "" # DEPRECATED! Use .Services.googleAnalytics.ID
 
-[Author]
-  name = "John Doe"
-  bio = "John Doe's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
-  avatar = "img/avatar.png"
+[services.disqus]
+  shortname = "" # Enable Disqus by entering your Disqus shortname
+[services.googleAnalytics]
+  ID = "" # Enable Google Analytics by entering your tracking ID
+
+# Goldmark renders raw HTML mixed within the Markdown
+[markup.goldmark.renderer]
+  unsafe = true # N.B. This is unsafe unless the content is under your control.  Set to false if you don't mix HTML with markdown.
 
 [Params]
   description = "John Doe's Personal blog about everything" # Description of your site
@@ -20,6 +24,11 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   pager = true
   post_meta = ["date", "categories"] # Order of post meta information
   mainSections = ["post", "docs"]
+
+[Params.Author]
+  name = "John Doe"
+  bio = "John Doe's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
+  avatar = "img/avatar.png"
 
 [Params.logo]
   subtitle = "Just another site" # Logo subtitle
