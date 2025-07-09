@@ -6,6 +6,10 @@ theme = "mainroad"
 disqusShortname = "" # Enable comments by entering your Disqus shortname
 googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
+# Goldmark renders raw HTML mixed within the Markdown
+[markup.goldmark.renderer]
+  unsafe = true # N.B. This is unsafe unless the content is under your control.  Set to false if you don't mix HTML with markdown.
+
 [Author]
   name = "John Doe"
   bio = "John Doe's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
